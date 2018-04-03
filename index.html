@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<base href="http://localhost/">
+		<meta name="description" content="">  
+		<meta name="author" content="Donatien NAMBININTSOA">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Soandraha</title>
+		<meta property="og:url" content="">
+		<meta property="og:type" content="Website"/>
+		<meta property="og:title" content="Soandraha"/>
+		<meta property="og:description" content=""/>
+		<meta property="og:image" content="images/cover.png"/>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
+		<script type="application/javascript" src="/js/vue.js"></script>
+		<script type="application/javascript" src="/js/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/tachyons.css">
+		<link rel="stylesheet" type="text/css" href="/css/material-icons.css">
+	</head>
+	<body class="ma0 w-100 h-100 bg-white sans-serif" style="font-family: 'Roboto Condensed', sans-serif;">
+		<div id="app" class="f6 w-100 h-100-l">
+			<div class="pa3" style="max-width: 960px; margin: auto;">
+				<table class="mv4" style="z-index: 1;">
+					<tbody>
+						<tr>
+							<td class="pa0">
+								<img class="mw5 br-100" src="/images/avatars-000185686167-cqhcz5-t500x500.jpg">
+							</td>
+							<td class="pa3"></td>
+							<td class="pa0">
+								<div class="f3 gray silver">Je m'appelle</div>
+								<h1 class="f1 mt0" style="">Donatien Nambinintsoa ANDRIANIRINA</h1>
+								<div class="f3 ttu mid-gray">Developpeur Fullstack</div>
+								<hr class="ba b-silver mb5">
+								<div><strong class="f4">23</strong> ans</div>
+								<div>Lot A 266 Bis Andavamamba Anatihazo 1</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table>
+					<tbody>
+						<tr>
+							<td class="f1 pr5 v-top">Etudes</td>
+							<td class="w-100">
+								<table>
+									<tbody>
+										<tr v-for="(step, stepKey) in study" class="">
+											<td class="br b-black pa0" v-bind:style="{opacity: 1 / (study.length - (study.length - (stepKey + 1)))}"></td>
+											<td class="v-top ph2 pt2">
+												<div class="bg-near-black pa2 br-100"></div>
+											</td>
+											<td class="ph2">
+												<div><strong class="f3" v-html="step.year"></strong></div>
+												<div class="f5">
+													<div v-html="step.label[0]" v-if="step.label.length == 1"></div>
+													<ul v-else class="pa0">
+														<li v-for="lab in step.label" v-html="lab"></li>
+													</ul>
+												</div>
+												<div class="mv5"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script type="application/javascript">
+
+			/**
+			 *	Check if the Vue class exist first
+			 */
+			new Vue({
+				el: "#app",
+				data: {
+					study: [
+						{
+							year: 2014,
+							label: ["Etude universitaire en informatique"],
+						},
+						{
+							year: 2013,
+							label: ["Baccalaureat En commerce"],
+						},
+						{
+							year: 2012,
+							label: ["Formation en infographie 3D au pres de B.I.T. Tsiadana"],
+						},
+						{
+							year: 2011,
+							label: ["B.E.P. En commerce", "Formation certifiee en WinDev au pres de F.C.D. behoririka"],
+						},
+					],
+				},
+			});
+		</script>
+	</body>
+</html>
