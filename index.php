@@ -293,7 +293,7 @@
 					</tbody>
 				</table>
 				<div class="mb5">
-					<h1 class="f1 ma2">Technologie de programmation maitrisés</h1>
+					<h1 class="f1 ma2">technologies maîtrisées</h1>
 					<div class="pa4">
 						<div v-for="tech in techs" class="pa3  bg-near-black white shadow-1 dib fl ma2">
 							<strong class="ttu" v-html="tech"></strong>
