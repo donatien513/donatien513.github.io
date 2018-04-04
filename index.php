@@ -295,7 +295,7 @@
 				<div>
 					<h1>Technologie de programmation maitrisés</h1>
 					<div class="pa4">
-						<div v-for="tech in techs"></div>
+						<div v-for="tech in techs" v-html="tech" class="pa3 bb shadow-1 dib fl ma2"></div>
 					</div>
 				</div>
 			</div>
