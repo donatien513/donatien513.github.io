@@ -18,9 +18,9 @@
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/tachyons@4.9.1/css/tachyons.min.css">
 		<style type="text/css">
 			body {
-				background: #bc4e9c;  /* fallback for old browsers */
-				background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
-				background: linear-gradient(to right, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				background: #2b5876;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 			}
 		</style>
 	</head>
@@ -137,9 +137,9 @@
 								<table>
 									<tbody>
 										<tr v-for="(step, stepKey) in study" class="">
-											<td class="br b-black pa0" v-bind:style="{opacity: 1 / (study.length - (study.length - (stepKey + 1)))}"></td>
+											<td class="br b-white pa0" v-bind:style="{opacity: 1 / (study.length - (study.length - (stepKey + 1)))}"></td>
 											<td class="v-top ph2 pt2">
-												<div class="bg-near-black pa2 br-100"></div>
+												<div class="bg-near-white pa2 br-100"></div>
 											</td>
 											<td class="ph2">
 												<div><strong class="f3" v-html="step.year"></strong></div>
@@ -280,8 +280,8 @@
 											<td class="ph2">
 												<div><strong class="f3" v-html="step.year"></strong></div>
 												<div class="f5">
-													<div class="gray" v-html="step.occupation"></div>
-													<div class="silver" v-html="step.entity"></div>
+													<div class="white" v-html="step.occupation"></div>
+													<div class="white" v-html="step.entity"></div>
 												</div>
 												<div class="mv5"></div>
 											</td>
