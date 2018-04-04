@@ -292,6 +292,12 @@
 						</tr>
 					</tbody>
 				</table>
+				<div>
+					<h1>Technologie de programmation maitrisés</h1>
+					<div class="pa4">
+						<div v-for="tech in techs"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script type="application/javascript">
@@ -337,6 +343,7 @@
 							entity: "Mpiketrika Company",
 						},
 					],
+					techs: ["Javascript", "NodeJS", "PHP", "SASS", "RestAPI", "Git", "REDIS", "MongoDB", "OAuth"]
 				},
 			});
 		</script>
