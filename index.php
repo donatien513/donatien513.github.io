@@ -161,7 +161,7 @@
 						</td></tr>
 						<tr>
 							<td class="pr5 v-top">
-								<div class="f2 mb3">Experience professionnel</div>
+								<div class="f2 mb3">Expériences professionnelles</div>
 								<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 								<svg version="1.1" width="98px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -331,17 +331,17 @@
 					work: [
 						{
 							year: 2017,
-							occupation: "Developpeur Web",
+							occupation: "Développeur Web",
 							entity: "Atout Persona",
 						},
 						{
 							year: 2016,
-							occupation: "Developpeur Web | Stagiaire",
+							occupation: "Développeur Web | Stagiaire",
 							entity: "INSTAT",
 						},
 						{
 							year: 2015,
-							occupation: "Developpeur Web | Stagiaire",
+							occupation: "Développeur Web | Stagiaire",
 							entity: "Mpiketrika Company",
 						},
 					],
