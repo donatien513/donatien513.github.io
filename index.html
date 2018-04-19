@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="">  
+		<meta name="author" content="Donatien NAMBININTSOA">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Donatien NAMBININTSOA | CV</title>
+		<meta property="og:url" content="">
+		<meta property="og:type" content="Website"/>
+		<meta property="og:title" content="Donatien NAMBININTSOA"/>
+		<meta property="og:description" content=""/>
+		<meta property="og:image" content="images/cover.png"/>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" type='text/css' rel="stylesheet">
+		<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+		<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/tippy.js@2.5.2/dist/tippy.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/tippy.js@2.5.2/dist/tippy.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/tippy.js@2.5.2/dist/themes/light.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<style type="text/css">
+			.123 {
+				background: #355C7D;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			}
+			.ih100 {
+				display: flex;
+				align-items: center; /* align vertical */
+			}
+			.ico-bg {
+				font-size: 20em;
+				position: absolute;
+				left: 15%;
+				opacity: 0.03;
+			}
+			.op-50 {
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+	<body class="h-100" style="font-family: 'Open Sans', sans-serif;">
+		<div id="app" class="h-100">
+			<header class="bg-white ih100">
+				<div class="container py-4 align-bottom text-center">
+					<div class="display-4">Bonjour&nbsp;<span >:)</span></div>
+					<br>
+					<div class="my-4"></div>
+					<br>
+					<div class="animated fadeIn">
+						<div class="animated zoomIn">
+							<img width="192px" height="192px" class="rounded-circle" src="my-photo.jpg">
+						</div>
+					</div>
+					<h1 class=""><strong>Donatien</strong>&nbsp;NAMBININTSOA</h1>
+					<h3 class="h3" style="opacity: 0.3;">Développeur Web</h3>
+				</div>
+			</header>
+			<hr class="my-0 py-0">
+			<section class="bg-light ih100">
+
+				<div class="container py-4">
+					<h2>Qui suis-je</h2>
+					<div class="row">
+						<div style="border-width: 6px !important;" class="col-md-6 px-4 my-4 py-2 border-left">
+							<p>Je me nomme NAMBININTSOA Andrianirina Jacques Donatien, 23 ans et développeur web. Mon parcours m’a façonné à avoir un sens aigu dans la recherche des meilleurs résultats.</p>
+						</div>
+					</div>
+				</div>
+				<div class="text-center mx-auto">
+					<i class="material-icons text-center mx-auto ico-bg">help</i>
+				</div>
+			</section>
+			<hr class="my-0 py-0">
+			<section class="bg-white ih100">
+				<div class="container py-4">
+					<div class="py-4 my-4">
+						<h1>Mon parcours</h1>
+					</div>
+					<br>
+					<div class="py-4 my-4">
+						<div v-for="(point, pointIndex) in cv" class="px-4 my-4 text-center">
+							<div style="width: 0px; height: 0px;" class="mx-auto my-4 bg-success px-2 py-2 rounded-circle pointInCv" v-bind:data-tippy-placement="pointIndex % 2 == 0 ? 'left' : 'right'" v-bind:title="makeBeautifulHTML(point)">
+								<div class="animated infinite fadeIn">
+									<div class="animated infinite fadeOut" style="width: 0px; height: 0px; overflow: visible;">
+										<div style="transform: translate(-16px, -16px);">
+											<div style="width: 0px; height: 0px;" class="py-3 px-3 rounded-circle animated infinite zoomIn bg-dark">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="width: 0px; height: 128px;" class="mx-auto my-4 bg-success px-0 py-2 border-left">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tippy-home"></div>
+			</section>
+			<hr class="my-0 py-0">
+			<section class="bg-light ih100">
+				<div class="container py-4">
+					<h1 class="">Tech stack</h1>
+					<p class="">Les technologies que je maitrise.</p>
+					<div class="row">
+						<div class="col-sm-6 col-md-4 col-lg-3" v-for="tech in techs">
+							<div class="card shadow-sm my-3">
+								<div class="card-body">
+									<i class="display-4 op-50" v-bind:class="tech.icon"></i>
+									<h3 v-html="tech.label"></h3>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<hr class="my-0 py-0">
+			<section class="bg-light ih100">
+				<div class="container py-4">
+				<p>Si mon profil correspond à ce que vous attendez, contactez-moi au &nbsp; <span class="display-4">034 47 624 60</span></p>
+				</div>
+			</section>
+		</div>
+		<style type="text/css" id="ih100-driver">
+
+		</style>
+		<script type="text/x-template" id="template-tippy">
+			<div>
+				<div class="text-left px-3 py-2">
+					<h3 class="font-weight-bold what" style="max-width: 300px;"></h3>
+					<div class="when text-muted">
+						<table class="text-muted my-0">
+							<tbody>
+								<tr>
+									<td class="px-2">
+										<i class="material-icons md-18">access_time</i>
+									</td>
+									<td>
+										<span class="begin"></span> - <span class="stop"></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<table class="text-muted my-0">
+						<tbody>
+							<tr>
+								<td class="px-2">
+									<i class="material-icons md-18">place</i>
+								</td>
+								<td>
+									<div class="where" style="max-width: 300px;"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</script>
+		<script type="application/javascript">
+
+			/**
+			 *	Check if the Vue class exist first
+			 */
+			new Vue({
+				el: "#app",
+				data: {
+					cv: [
+						{
+							when: ["Octobre 2017", "Mars 2018"],
+							what: "Développeur Web",
+							where: "Atout Persona",
+						},
+						{
+							when: ["Octobre 2016", "Décembre 2016"],
+							what: "Etude procédure douanière",
+							where: "CAES & Toamasina",
+						},
+						{
+							when: ["Janvier 2016", "Mars 2016"],
+							what: "Stage développeur Web",
+							where: "INSTAT Anosy",
+						},
+						{
+							when: ["Novembre 2015"],
+							what: "Stage développeur Web",
+							where: "Mpiketrika Company Alarobia",
+						},
+						{
+							when: ["Octobre 2015", "Janvier 2016"],
+							what: "Etude langue anglaise",
+							where: "English tutoring Antananarivo",
+						},
+						{
+							when: ["Octobre 2013", "Septembre 2015"],
+							what: "Etude universitaire filière informatique",
+							where: "ISIME Behoririka",
+						},
+						{
+							when: ["Janvier 2013", "Avril 2013"],
+							what: "Infographie 3D",
+							where: "BIT formation Tsiadana",
+						},
+						{
+							when: ["Mars 2011", "Juin 2011"],
+							what: "Formation WinDEV",
+							where: "FCD Citic Behoririka",
+						},
+					],
+					techs: [
+						{
+							label: "NodeJS",
+							icon: "devicon-nodejs-plain colored"
+						},
+						{
+							label: "PHP",
+							icon: "devicon-php-plain colored"
+						},
+						{
+							label: "Zend",
+							icon: "devicon-zend-plain colored"
+						},
+						{
+							label: "HTML5",
+							icon: "devicon-html5-plain colored"
+						},
+						{
+							label: "CSS3",
+							icon: "devicon-css3-plain colored"
+						},
+						{
+							label: "SASS",
+							icon: "devicon-sass-original colored"
+						},
+						{
+							label: "Vue.js",
+							icon: "devicon-vuejs-plain colored"
+						},
+						{
+							label: "jQuery",
+							icon: "devicon-jquery-plain colored"
+						},
+						{
+							label: "Bootstrap",
+							icon: "devicon-bootstrap-plain colored"
+						},
+						{
+							label: "REDIS",
+							icon: "devicon-redis-plain colored"
+						},
+						{
+							label: "NGINX",
+							icon: "devicon-nginx-original colored"
+						},
+						{
+							label: "MongoDB",
+							icon: "devicon-mongodb-plain colored"
+						},
+						{
+							label: "MySQL",
+							icon: "devicon-mysql-plain colored"
+						},
+						{
+							label: "Gulp",
+							icon: "devicon-gulp-plain colored"
+						},
+						{
+							label: "Git",
+							icon: "devicon-git-plain colored"
+						},
+						{
+							label: "Trello",
+							icon: "devicon-trello-plain colored"
+						},
+					],
+				},
+				methods: {
+					makeBeautifulHTML: function (point) {
+						var editor = $($("#template-tippy").html());
+						$(editor).find(".begin").html(point.when[0]);
+						$(editor).find(".stop").html(point.when[1]);
+
+						$(editor).find(".what").html(point.what);
+						$(editor).find(".where").html(point.where);
+						return $(editor).html();
+					},
+				},
+				mounted: function () {
+					var tp = tippy(".pointInCv", {
+						arrow: true,
+						appendTo: $("#tippy-home").get(0),
+						arrowTransform: 'scale(2)',
+						theme: "light",
+						arrowType: 'round',
+						animation: 'scale',
+						flip: false,
+						multiple: true,
+						hideOnClick: false,
+						interactive: true,
+						livePlacement: false,
+						offset: "0, 20",
+						trigger: "manual",
+					});
+					$(".pointInCv").each(function (index) {
+						tp.tooltips[index].show();
+					});
+				},
+			});
+			$(window).on("update-ih100", function () {
+				$("#ih100-driver").text(".ih100{" + "min-height: " + $(window).height() + "px" +  "}");
+			});
+			$(window).trigger("update-ih100");
+			$(window).resize(function () {
+				$(window).trigger("update-ih100");
+			});
+		</script>
+	</body>
+</html>
