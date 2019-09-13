@@ -1,0 +1,41 @@
+{
+  "name": "my-resume",
+  "version": "1.0.0",
+  "description": "Donatien NAMBININTSOA Resume |  Web Version",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donatien513/my-resume.git"
+  },
+  "author": "https://github.com/donatien513",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donatien513/my-resume/issues"
+  },
+  "homepage": "https://github.com/donatien513/my-resume#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "lodash": "^4.17.15",
+    "nanoid": "^2.1.1",
+    "next": "^9.0.5",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-select": "^3.0.4",
+    "react-typed": "^1.2.0",
+    "react-wavify": "^1.1.7",
+    "reactstrap": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "react-svg-loader": "^3.0.3",
+    "typescript": "^3.6.2"
+  }
+}
