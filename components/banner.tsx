@@ -1,6 +1,7 @@
 import React from 'react';
 import Typed from 'react-typed';
 import { Jumbotron, Container } from 'reactstrap';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import Wave from 'react-wavify'
 
 import '../styles/banner.sass';
@@ -51,6 +52,21 @@ class Banner extends React.Component {
                 <p className="roboto">
                   Donatien NAMBININTSOA ANDRIANIRINA, <span className="gray">développeur Full Stack</span>
                 </p>
+<SyntaxHighlighter className="mv5 mw7 w-100 center f5" language="javascript">{
+`const network = require("awesome-recruitment-network");
+const { skills, expectedSalary } = require("./me");
+
+// I am opened to opportunities
+network.on("opportunity", (job, recruiter) => {
+  if (skills.includes(job.type) && job.salary >= expectedSalary) {
+    return recruiter.message({
+      message: "I'd be happy to collaborate with You :)"
+    });
+  }
+}).subscribe();
+
+`
+}</SyntaxHighlighter>
               </Container>
             </div>
           </Jumbotron>

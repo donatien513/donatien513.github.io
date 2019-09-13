@@ -13,6 +13,8 @@ import flutter from 'react-svg-loader!../assets/icons/flutter.svg';
 import mongodb from 'react-svg-loader!../assets/icons/mongodb.svg';
 import react from 'react-svg-loader!../assets/icons/react.svg';
 
+import more from 'react-svg-loader!../assets/icons/more.svg';
+
 export default {
   linkedin,
   github,
@@ -23,5 +25,6 @@ export default {
   git,
   flutter,
   mongodb,
-  react
+  react,
+  more
 }

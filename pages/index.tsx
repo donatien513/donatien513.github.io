@@ -29,6 +29,9 @@ class Main extends React.Component {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tachyons@4.11.1/css/tachyons.min.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-awesome-button@6.1.2/dist/styles.min.css" />          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-awesome-button@6.1.2/dist/themes/theme-indigo.min.css" />
         </Head>
         <div className="font-weight-normal w-100 h-100">
           <LanguageSwitch />
