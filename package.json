@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "npm run build && next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export",
+    "deploy": "next build && next export -o docs",
     "test": "npm test"
   },
   "repository": {
