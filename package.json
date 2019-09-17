@@ -10,7 +10,7 @@
     "export": "npm run build && next export",
     "deploy": "next build && next export -o docs",
     "predeploy": "next build && next export -o docs",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d docs",
     "test": "npm test"
   },
   "repository": {
