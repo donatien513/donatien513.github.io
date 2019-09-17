@@ -9,6 +9,8 @@
     "start": "next start",
     "export": "npm run build && next export",
     "deploy": "next build && next export -o docs",
+    "predeploy": "next build && next export -o docs",
+    "deploy": "gh-pages -d build",
     "test": "npm test"
   },
   "repository": {
