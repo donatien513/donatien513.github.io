@@ -4,6 +4,7 @@ import nanoid from 'nanoid';
 import { assign, get } from 'lodash';
 import { AwesomeButton } from "react-awesome-button";
 import TechStackList from '../datas/tech-stack-list';
+import lang from '../lang';
 import '../styles/icons.sass';
 
 
@@ -35,7 +36,6 @@ class SingleStack extends React.Component<Stack, any> {
             </div>
           </CardBody>
         </Card>
-
       </>
     )
   }
@@ -55,7 +55,6 @@ class TechStack extends React.Component<any, TechStackState> {
   }
 
   toggleModalOpen() {
-    console.log(this.state)
     this.setState({ modalOpen: !this.state.modalOpen });
   }
 
@@ -68,43 +67,41 @@ class TechStack extends React.Component<any, TechStackState> {
             <Col lg="2" xl="3"></Col>
             <Col md="12" lg="8" xl="6">
               <p className="tc gray dib ph4 roboto">
-                J'utilise les outils qui allient performance et simplicité.
-                Il est primordiale de faire le bon choix pour être productif, ainsi, avoir de meilleur resultat.
+                {lang.techStackChoice}
               </p>
             </Col>
             <Col lg="2" xl="3"></Col>
           </Row>
-          <div className="tc roboto">Voici les technologies que j'utilise principalement :</div>
+          <div className="tc roboto">{lang.toolsIUse} :</div>
           <Row>
             {
               techStacks
               .filter(stack => stack.icon)
               .map(stack => 
-                <Col className="mv3" xs="6" sm="6" md="4" lg="3" xl="2" key={stack._key}>
+                <Col className="mv3" xs="6" sm="6" md="4" lg="3" xl="3" key={stack._key}>
                   <SingleStack stack={stack} />
                 </Col>
               )
             }
-            <Col className="mv3" xs="6" sm="6" md="4" lg="3" xl="2">
-              <div className="h-100 flex items-center justify-center">
-                <AwesomeButton
-                  type="secondary"
-                  size="medium"
-                  onPress={this.toggleModalOpen}
-                >
-                  Voir tout
-                </AwesomeButton>
-              </div>
-            </Col>
           </Row>
+          <div className="h-100 flex items-center justify-center">
+            <AwesomeButton
+              type="secondary"
+              size="medium"
+              onPress={this.toggleModalOpen}
+            >
+              Voir tout
+            </AwesomeButton>
+          </div>
+          
         </Container>
         <Modal isOpen={this.state.modalOpen} toggle={this.toggleModalOpen} className="modal-dialog-centered modal-lg">
-          <ModalHeader toggle={this.toggleModalOpen}><h2 className="tc roboto-condensed">Teck Stack</h2></ModalHeader>
+          <ModalHeader toggle={this.toggleModalOpen}>Teck Stack</ModalHeader>
           <ModalBody>
-            <small className="db tc roboto gray">Voici la liste des outils que j'ai utilisé :</small><br />
+            <small className="db tc roboto gray">{lang.techStackUsed} :</small><br />
             <ul className="ph2">{
               techStacks.map(stack => 
-                <li className="dib ph3 pv1 mr2 mb2 ba br-pill bg-light-gray b--moon-gray">{stack.name}</li>
+                <li className="dib ph3 pv1 mr2 mb2 ba br-pill bg-light-gray b--moon-gray" key={stack._key}>{stack.name}</li>
               )
             }</ul>
           </ModalBody>

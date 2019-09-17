@@ -2,28 +2,7 @@ import Icons from '../icons';
 
 export default [
   {
-    name: 'Golang',
-    icon: <Icons.golang />,
-    link: 'https://golang.org',
-  },
-  {
-    name: 'MongoDB',
-    icon: <Icons.mongodb />,
-    link: 'https://www.mongodb.com',
-  },
-  { name: 'RethinkDB', },
-  { name: 'MySQL', },
-  { name: 'SQLite', },
-  { name: 'Redis', },
-  {
-    name: 'Firebase',
-    icon: <Icons.firebase />,
-    link: 'https://firebase.google.com',
-  },
-  {
-    name: 'Amazon Web Services',
-    icon: <Icons.aws />,
-    link: 'https://aws.amazon.com',
+    name: 'Amazon Web Services'
   },
   { name: 'PHP', },
   { name: 'JavaScript', },
@@ -50,13 +29,17 @@ export default [
     link: 'https://flutter.dev',
   },
   {
-    name: 'Git',
-    icon: <Icons.git />,
-    link: 'https://git-scm.com',
+    name: 'MongoDB',
+    icon: <Icons.mongodb />,
+    link: 'https://www.mongodb.com',
   },
+  { name: 'RethinkDB', },
+  { name: 'MySQL', },
+  { name: 'SQLite', },
+  { name: 'Redis', },
+  { name: 'Git', },
   { name: 'Github', },
   { name: 'Circle CI', },
   { name: 'Semaphore CI', },
   { name: 'Azure Pipeline', },
-
 ];

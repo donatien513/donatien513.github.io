@@ -5,6 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import Wave from 'react-wavify'
 
 import '../styles/banner.sass';
+import lang from '../lang';
 
 class Banner extends React.Component {
   constructor(props) {
@@ -12,9 +13,6 @@ class Banner extends React.Component {
     this.state = {
 
     };
-  }
-  componentDidMount() {
-
   }
 
   render() {
@@ -43,16 +41,11 @@ class Banner extends React.Component {
           <Jumbotron fluid className="bg-transparent pb0">
             <div className="w-100">
               <Container className="h-100 ph4">
-                <h1 className="display-3 lh-solid mv-0 monospace white">Tpkl</h1>
-                <h3 className="f3-l lh-solid mv-0 white roboto-condensed">Je conçois des applications&nbsp;
+                <h1 className="display-3 lh-solid mv-0 monospace pacifico white">{lang.hello}</h1>
+                <h3 className="f3-l lh-solid mv-0 white roboto-condensed">{lang.iMake}&nbsp;
                 <span className="light-blue">
                   <Typed
-                    strings={[
-                      'webs...',
-                      'mobiles...',
-                      'qui fonctionnent... :p',
-                      'performantes...',
-                    ]}
+                    strings={lang.typings}
                     typeSpeed={60}
                     backSpeed={30}
                     backDelay={4000}
@@ -60,13 +53,13 @@ class Banner extends React.Component {
                 </span>
                 </h3>
                 <p className="roboto white">
-                  Donatien NAMBININTSOA ANDRIANIRINA, <span className="near-white">développeur Full Stack</span>
+                  Donatien NAMBININTSOA ANDRIANIRINA, <span className="near-white">{lang.fullStackDev}</span>
                 </p>
               </Container>
             </div>
           </Jumbotron>
           <Jumbotron className="w-100 ph0 pv0 br0 relative bg-white z--1">
-            <div className="absolute bg-navy w-100 h-50 z--1">aaa</div>
+            <div className="absolute bg-navy w-100 h-50 z--1"></div>
             <Container>
               <div>
 <SyntaxHighlighter className="mv5 mw7 w-100 center shadow f4 f6-sm bg-white" language="javascript">{

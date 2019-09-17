@@ -15,6 +15,12 @@ class Main extends React.Component {
     this.state = {
 
     };
+
+    this.refresh = this.refresh.bind(this);
+  }
+
+  refresh() {
+    this.setState({});
   }
 
   render() {
@@ -34,7 +40,7 @@ class Main extends React.Component {
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-awesome-button@6.1.2/dist/themes/theme-indigo.min.css" />
         </Head>
         <div className="font-weight-normal w-100 h-100">
-          <LanguageSwitch />
+          <LanguageSwitch refreshPage={this.refresh} />
           <Banner />
           <Social />
           <TechStack />
