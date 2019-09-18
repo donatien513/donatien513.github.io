@@ -2,12 +2,11 @@
 This is a HTML version of my resume
 
 [![CircleCI](https://circleci.com/gh/donatien513/my-resume/tree/master.svg?style=svg)](https://circleci.com/gh/donatien513/my-resume/tree/master)
-https://img.shields.io/website?url=https%3A%2F%2Fdonatien513.github.io%2Fmy-resume%2F
-https://img.shields.io/david/donatien513/my-resume
-
-https://img.shields.io/github/package-json/v/donatien513/my-resume
-https://img.shields.io/github/languages/code-size/donatien513/my-resume
-https://img.shields.io/github/languages/count/donatien513/my-resume
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fdonatien513.github.io%2Fmy-resume%2F)
+![David (path)](https://img.shields.io/david/donatien513/my-resume)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/donatien513/my-resume)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/donatien513/my-resume)
+![GitHub language count](https://img.shields.io/github/languages/count/donatien513/my-resume)
 
 ## Installation
 

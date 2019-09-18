@@ -12,7 +12,8 @@ const { CI } = process.env;
 const getRepositoryName = () => {
   const repoUrl = packageJson.repository.url;
   const parsedRepoURL = url.parse(repoUrl);
-  return path.basename(parsedRepoURL.pathname);
+  const extname = path.extname(parsedRepoURL.pathname);
+  return path.basename(parsedRepoURL.pathname).replace(extname, '');
 }
 
 // next.config.js
