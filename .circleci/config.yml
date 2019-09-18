@@ -46,7 +46,7 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
       - run:
           name: Installing ESLint
-          command: npm install eslint eslint-plugin-react@latest --save
+          command: npm install eslint @typescript-eslint/eslint-plugin eslint-plugin-react@latest --save
       - run:
           name: Run ESLint
           command: npm test
