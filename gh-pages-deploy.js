@@ -9,6 +9,7 @@ ghpages.publish('out', {
     name: 'Donatien NAMBININTSOA (Circle CI)',
     email: 'donatiennambinintsoa@gmail.com'
   }
-}, () => {
-  console.log("🥳, We made it...");
+}, (error, message) => {
+  if (error) return console.error(error);
+  console.log("🥳, We made it...", message);
 });
