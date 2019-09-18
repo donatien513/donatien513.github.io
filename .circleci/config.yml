@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  Build:
     docker:
       - image: circleci/node:10.16.0
     working_directory: ~/my-resume
@@ -34,7 +34,7 @@ jobs:
           command: |
             npm run export
 
-  test:
+  Test:
     working_directory: ~/my-resume
     docker:
       - image: circleci/node:10.16.0
@@ -59,39 +59,11 @@ jobs:
           name: Run ESLint
           command: npm test
 
-  deploy:
-    working_directory: ~/my-resume
-    docker:
-      - image: circleci/node:10.16.0
-    steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          key: dependencies-{{ checksum "package.json" }}
-
-      - run:
-          name: Installing deps
-          command: npm install
-
-      - checkout
-
-      - run:
-          name: Deploying App
-          command: npm run deploy
-
 workflows:
   version: 2
-  test-build:
+  Test_Build:
     jobs:
       - test
-      - build:
+      - Build:
           requires:
-            - test
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - master
+            - Test
