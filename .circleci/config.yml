@@ -11,6 +11,7 @@ jobs:
       - restore_cache:
           key: dependencies-{{ checksum "package.json" }}
 
+      # Run installation
       - run:
           name: Installing dependencies
           command: npm install
@@ -34,12 +35,23 @@ jobs:
     steps:
       - checkout
 
+      # Download and cache dependencies
+      - restore_cache:
+          key: dependencies-{{ checksum "package.json" }}
       - run:
           name: Installing ESLint
           command: npm install eslint eslint-plugin-react@latest --save
+
+  deploy:
+    working_directory: ~/my-resume
+    docker:
+      - image: circleci/node:10.16.0
+    steps:
+      - checkout
+
       - run:
-          name: Run ESLint
-          command: ./node_modules/.bin/eslint ./
+          name: Deploying App
+          command: npm run deploy
 
 workflows:
   version: 2
@@ -49,3 +61,10 @@ workflows:
       - build:
           requires:
             - test
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
