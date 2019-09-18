@@ -66,6 +66,16 @@ jobs:
     steps:
       - checkout
 
+      # Download and cache dependencies
+      - restore_cache:
+          key: dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Installing deps
+          command: npm install
+
+      - checkout
+
       - run:
           name: Deploying App
           command: npm run deploy
