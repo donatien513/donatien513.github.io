@@ -7,15 +7,23 @@ import Wave from 'react-wavify'
 import '../styles/banner.sass';
 import lang from '../lang';
 
-class Banner extends React.Component {
+const TYPED_CONFIG = {
+  typeSpeed: 60,
+  backSpeed: 30,
+  backDelay: 4000
+};
+
+interface BannerProps {};
+
+interface BannerState {};
+
+class Banner extends React.Component<BannerProps, BannerState> {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = { };
   }
 
-  render() {
+  public render() {
     return(
       <div className="w-100 mb5 relative">
         <div className="w-100 h-100 absolute z--1 bg-navy"></div>
@@ -46,9 +54,9 @@ class Banner extends React.Component {
                 <span className="light-blue">
                   <Typed
                     strings={lang.typings}
-                    typeSpeed={60}
-                    backSpeed={30}
-                    backDelay={4000}
+                    typeSpeed={TYPED_CONFIG.typeSpeed}
+                    backSpeed={TYPED_CONFIG.backSpeed}
+                    backDelay={TYPED_CONFIG.backDelay}
                     loop />
                 </span>
                 </h3>
@@ -62,7 +70,7 @@ class Banner extends React.Component {
             <div className="absolute bg-navy w-100 h-50 z--1"></div>
             <Container>
               <div>
-<SyntaxHighlighter className="mv5 mw7 w-100 center shadow f4 f6-sm bg-white" language="javascript">{
+<SyntaxHighlighter className="mv5 mw7 w-100 center shadow f5 f6-sm bg-white" language="javascript">{
 `const network = require("awesome-recruitment-network");
 const { skills, expectedSalary } = require("./me");
 
@@ -82,7 +90,7 @@ network.on("opportunity", (job, recruiter) => {
           </Jumbotron>
         </div>
       </div>
-    )
+    );
   }
 };
 

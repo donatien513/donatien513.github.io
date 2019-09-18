@@ -8,20 +8,17 @@ import lang from '../lang';
 import '../styles/icons.sass';
 
 
-interface Stack extends React.Props<any> {
+interface SingleStackProps extends React.Props<any> {
   stack: any
 }
 
-interface TechStackState {
-  modalOpen: boolean
-}
+interface SingleStackState extends React.Props<any> { }
 
-class SingleStack extends React.Component<Stack, any> {
+
+class SingleStack extends React.Component<SingleStackProps, SingleStackState> {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = { };
   }
 
   render() {
@@ -41,24 +38,31 @@ class SingleStack extends React.Component<Stack, any> {
   }
 }
 
+const NUMBER_OF_BYTE = 6;
 const techStacks = TechStackList.map(stack => {
-  return assign(stack, { _key: nanoid(6) });
+  return assign(stack, { _key: nanoid(NUMBER_OF_BYTE) });
 });
 
-class TechStack extends React.Component<any, TechStackState> {
+interface TechStackProps { }
+
+interface TechStackState {
+  modalOpen: boolean
+}
+
+class TechStack extends React.Component<TechStackProps, TechStackState> {
   constructor(props) {
     super(props);
     this.state = {
       modalOpen: false
     };
-    this.toggleModalOpen = this.toggleModalOpen.bind(this);
+    this._toggleModalOpen = this._toggleModalOpen.bind(this);
   }
 
-  toggleModalOpen() {
+  private _toggleModalOpen() {
     this.setState({ modalOpen: !this.state.modalOpen });
   }
 
-  render() {
+  public render() {
     return(
       <>
         <Container className="mv5">
@@ -88,15 +92,14 @@ class TechStack extends React.Component<any, TechStackState> {
             <AwesomeButton
               type="secondary"
               size="medium"
-              onPress={this.toggleModalOpen}
+              onPress={this._toggleModalOpen}
             >
               Voir tout
             </AwesomeButton>
           </div>
-          
         </Container>
-        <Modal isOpen={this.state.modalOpen} toggle={this.toggleModalOpen} className="modal-dialog-centered modal-lg">
-          <ModalHeader toggle={this.toggleModalOpen}>Teck Stack</ModalHeader>
+        <Modal isOpen={this.state.modalOpen} toggle={this._toggleModalOpen} className="modal-dialog-centered modal-lg">
+          <ModalHeader toggle={this._toggleModalOpen}>Teck Stack</ModalHeader>
           <ModalBody>
             <small className="db tc roboto gray">{lang.techStackUsed} :</small><br />
             <ul className="ph2">{
@@ -107,7 +110,7 @@ class TechStack extends React.Component<any, TechStackState> {
           </ModalBody>
         </Modal>
       </>
-    )
+    );
   }
 };
 

@@ -5,43 +5,45 @@ import lang from '../lang';
 
 const languages = lang.getAvailableLanguages().map((langCode) => {
   return {
-    value: langCode,
+    default: langCode === lang.getLanguage() ? true : undefined,
     label: langCode.toUpperCase(),
-    default: langCode === lang.getLanguage() ? true : undefined
+    value: langCode
   };
 });
 
-interface Props extends React.Props<any> {
-  refreshPage: any
-}
+interface LanguageSwitchProps {
+  refreshPage(): void
+};
 
-class LanguageSwitch extends React.Component<Props, any> {
+interface LanguageSwitchState { };
+
+class LanguageSwitch extends React.Component<LanguageSwitchProps, LanguageSwitchState> {
   constructor(props) {
     super(props);
     this.state = {
 
     };
 
-    this.changeLang = this.changeLang.bind(this);
+    this._changeLang = this._changeLang.bind(this);
   }
 
-  changeLang(langChange) {
+  private _changeLang(langChange) {
     lang.setLanguage(langChange.value.toLowerCase());
     this.props.refreshPage();
   }
 
-  render() {
+  public render() {
     return(
       <div className="fixed dib bottom-0 right-0 z-999 w4 ph3 pv3">
         <Select
           menuPlacement="top"
           defaultValue={languages.find(lang => lang.default)}
           isSearchable={false}
-          onChange={this.changeLang}
+          onChange={this._changeLang}
           options={languages}
         />
       </div>
-    )
+    );
   }
 };
 
