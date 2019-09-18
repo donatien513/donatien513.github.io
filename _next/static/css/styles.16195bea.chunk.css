@@ -1,0 +1,44 @@
+.manjari {
+  font-family: 'Manjari', sans-serif; }
+
+.pacifico {
+  font-family: 'Pacifico', cursive; }
+
+.roboto {
+  font-family: 'Roboto', sans-serif; }
+
+.roboto-condensed {
+  font-family: 'Roboto Condensed', sans-serif; }
+
+.banner-background {
+  background: #ECE9E6;
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); }
+
+.always-clear {
+  text-shadow: 1px 1px 0px #FFF, -1px -1px 0px #FFF; }
+
+.upside-down {
+  transform: rotate(180deg); }
+
+.z--1 {
+  z-index: -1; }
+
+.inner-shadow {
+  -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1); }
+
+.bg-smooth {
+  height: calc(100vh - 100px);
+  border-radius: 120px; }
+
+.social-icons {
+  width: 34px;
+  height: 34px;
+  opacity: 0.5;
+  transition: opacity linear .3s; }
+
+.social-icons:hover {
+  opacity: 0.8; }
+
