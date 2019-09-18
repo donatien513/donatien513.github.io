@@ -10,7 +10,7 @@ This is a HTML version of my resume
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install Futurdeco.
+Use the package manager [npm](https://www.npmjs.com/) to install this Resume.
 
 ```bash
 git clone https://github.com/donatien513/my-resume
