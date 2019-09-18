@@ -24,4 +24,17 @@ npm install
 ```bash
 npm run dev
 ```
-Open your browser and open http://localhost:3000
+
+## Test
+
+```bash
+npm run test
+```
+
+## Build
+
+```bash
+npm run build && npm run export
+```
+
+Open on your browser http://localhost:3000
