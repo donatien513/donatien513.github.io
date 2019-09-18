@@ -1,8 +1,8 @@
 import LocalizedStrings from 'react-localization';
 
-import fr from './fr';
 import en from './en';
+import fr from './fr';
 
-const language = new LocalizedStrings({ fr, en });
+const language = new LocalizedStrings({ en, fr });
 
 export default language;
