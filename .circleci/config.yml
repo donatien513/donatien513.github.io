@@ -1,0 +1,51 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.16.0
+    working_directory: ~/my-resume
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          key: dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Installing dependencies
+          command: npm install
+      
+      - checkout
+
+      - save_cache:
+          paths: node_modules
+          key: dependencies-{{ checksum "package.json" }}
+
+      # run build!
+      - run:
+          name: Build React App
+          command: |
+            npm run export
+
+  test:
+    working_directory: ~/my-resume
+    docker:
+      - image: circleci/node:10.16.0
+    steps:
+      - checkout
+
+      - run:
+          name: Installing ESLint
+          command: npm install eslint eslint-plugin-react@latest --save
+      - run:
+          name: Run ESLint
+          command: ./node_modules/.bin/eslint ./
+
+workflows:
+  version: 2
+  test-build:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
