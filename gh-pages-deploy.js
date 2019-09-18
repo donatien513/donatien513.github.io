@@ -2,7 +2,7 @@
 
 const ghpages = require('gh-pages');
 
-ghpages.publish('dist', {
+ghpages.publish('out', {
   dotfiles: true,
   message: 'Deploy to Github Page',
   user: {
