@@ -44,9 +44,17 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           key: dependencies-{{ checksum "package.json" }}
+
       - run:
-          name: Installing ESLint
-          command: npm install eslint @typescript-eslint/eslint-plugin eslint-plugin-react@latest typescript --save
+          name: Installing deps
+          command: npm install
+
+      - checkout
+
+      - save_cache:
+          paths: node_modules
+          key: dependencies-{{ checksum "package.json" }}
+
       - run:
           name: Run ESLint
           command: npm test
