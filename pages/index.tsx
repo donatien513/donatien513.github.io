@@ -43,7 +43,7 @@ class Main extends React.Component<MainProps, MainState> {
       description: DESCRIPTION,
       images: [
         {
-          url: '/my-photo.jpg',
+          url: 'https://cdn.jsdelivr.net/gh/donatien513/my-resume/my-photo.jpg',
           width: 800,
           height: 600,
           alt: 'My photo',
@@ -84,13 +84,8 @@ class Main extends React.Component<MainProps, MainState> {
           <Social />
           <TechStack />
         </div>
-<span id="wts1904503">&nbsp;</span><script>
-var wts=document.createElement('script');wts.type='text/javascript';
-wts.async=true;wts.src='https://wts.one/1/1904503/log6_2.js';
-document.getElementById('wts1904503').appendChild(wts);
-</script><noscript><a href="https://www.web-stat.com">
-<img src="https://wts.one/6/1/1904503.gif" 
-alt="Web-Stat web statistics" /></a></noscript>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101209921);</script>
+<script async src="//static.getclicky.com/js"></script>
       </>
     )
   }
