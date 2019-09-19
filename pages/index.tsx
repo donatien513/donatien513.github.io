@@ -47,6 +47,13 @@ class Main extends React.Component<MainProps, MainState> {
           <Social />
           <TechStack />
         </div>
+<span id="wts1904503">&nbsp;</span><script>
+var wts=document.createElement('script');wts.type='text/javascript';
+wts.async=true;wts.src='https://wts.one/1/1904503/log6_2.js';
+document.getElementById('wts1904503').appendChild(wts);
+</script><noscript><a href="https://www.web-stat.com">
+<img src="https://wts.one/6/1/1904503.gif" 
+alt="Web-Stat web statistics" /></a></noscript>
       </>
     )
   }
