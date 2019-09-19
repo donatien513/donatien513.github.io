@@ -3,6 +3,7 @@ import { Container, Card, CardBody, Row, Col, Modal, ModalBody, ModalHeader } fr
 import nanoid from 'nanoid';
 import { assign, get } from 'lodash';
 import { AwesomeButton } from "react-awesome-button";
+import Slider from "react-slick";
 import TechStackList from '../datas/tech-stack-list';
 import lang from '../lang';
 import '../styles/icons.sass';
@@ -63,6 +64,15 @@ class TechStack extends React.Component<TechStackProps, TechStackState> {
   }
 
   public render() {
+    const settings = {
+      dots: true,
+      autoplay: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1
+    };
+
     return(
       <>
         <Container className="mv5">
@@ -77,38 +87,20 @@ class TechStack extends React.Component<TechStackProps, TechStackState> {
             <Col lg="2" xl="3"></Col>
           </Row>
           <div className="tc roboto">{lang.toolsIUse} :</div>
-          <Row>
-            {
-              techStacks
-              .filter(stack => stack.icon)
-              .map(stack => 
-                <Col className="mv3" xs="6" sm="6" md="4" lg="3" xl="3" key={stack._key}>
-                  <SingleStack stack={stack} />
-                </Col>
-              )
-            }
-          </Row>
-          <div className="h-100 flex items-center justify-center">
-            <AwesomeButton
-              type="secondary"
-              size="medium"
-              onPress={this._toggleModalOpen}
-            >
-              Voir tout
-            </AwesomeButton>
+          <div>
+            <Slider className="dib w-100 mw7 center" {...settings}>
+              {
+                techStacks
+                .filter(stack => stack.icon)
+                .map(stack => 
+                  <div className="mv3" key={stack._key}>
+                    <SingleStack stack={stack} />
+                  </div>
+                )
+              }
+            </Slider>
           </div>
         </Container>
-        <Modal isOpen={this.state.modalOpen} toggle={this._toggleModalOpen} className="modal-dialog-centered modal-lg">
-          <ModalHeader toggle={this._toggleModalOpen}>Teck Stack</ModalHeader>
-          <ModalBody>
-            <small className="db tc roboto gray">{lang.techStackUsed} :</small><br />
-            <ul className="ph2">{
-              techStacks.map(stack => 
-                <li className="dib ph3 pv1 mr2 mb2 ba br-pill bg-light-gray b--moon-gray" key={stack._key}>{stack.name}</li>
-              )
-            }</ul>
-          </ModalBody>
-        </Modal>
       </>
     );
   }
