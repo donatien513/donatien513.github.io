@@ -45,7 +45,7 @@ class Main extends React.Component<MainProps, MainState> {
         {
           url: 'https://cdn.jsdelivr.net/gh/donatien513/my-resume/my-photo.jpg',
           width: 800,
-          height: 600,
+          height: 800,
           alt: 'My photo',
         },
       ],
