@@ -24,7 +24,7 @@ class SingleStack extends React.Component<SingleStackProps, SingleStackState> {
   render() {
     return(
       <>
-        <Card className="shadow-hover">
+        <Card className="border-0">
           <CardBody>
             <div className="dib w-100 tc animated fadeIn">
               <div className="animated zoomIn">
