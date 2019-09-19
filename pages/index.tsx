@@ -90,7 +90,7 @@ class Main extends React.Component<MainProps, MainState> {
   }
 };
 
-ReactGA.initialize(process.env.GA_TRACKING_ID);
+ReactGA.initialize('UA-105140565-1');
 ReactGA.pageview('/');
 
 export default Main;
