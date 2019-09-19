@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { NextSeo, SocialProfileJsonLd } from 'next-seo';
+import ReactGA from 'react-ga';
 
 import '../styles/main.sass';
 
@@ -84,11 +85,12 @@ class Main extends React.Component<MainProps, MainState> {
           <Social />
           <TechStack />
         </div>
-<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101209921);</script>
-<script async src="//static.getclicky.com/js"></script>
       </>
     )
   }
 };
+
+ReactGA.initialize(process.env.GA_TRACKING_ID);
+ReactGA.pageview('/');
 
 export default Main;
