@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 import '../styles/main.sass';
 
@@ -12,6 +13,10 @@ import LanguageSwitch from '../components/language-switch';
 interface MainProps {};
 
 interface MainState {};
+
+const URL = 'https://donatien513.github.io/my-resume/';
+const TITLE = 'Donatien NAMBININTSOA | Resume';
+const DESCRIPTION = 'I am a full stack devloper. I use Node, React, Flutter, MongoDB and other tools to build nice apps.';
 
 class Main extends React.Component<MainProps, MainState> {
   constructor(props) {
@@ -31,6 +36,29 @@ class Main extends React.Component<MainProps, MainState> {
 <Head>
   <title>My Resume</title>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <NextSeo
+    title={TITLE}
+    description={DESCRIPTION}
+    openGraph={{
+      type: 'website',
+      url: URL,
+      title: TITLE,
+      description: DESCRIPTION,
+      images: [
+        {
+          url: URL + '/my-photo.jpg',
+          width: 800,
+          height: 600,
+          alt: 'My photo',
+        },
+      ],
+    }}
+    twitter={{
+      handle: '@handle',
+      site: '@site',
+      cardType: 'summary_large_image',
+    }}
+  />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" />
