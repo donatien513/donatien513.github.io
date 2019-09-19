@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
+import { NextSeo, SocialProfileJsonLd } from 'next-seo';
 
 import '../styles/main.sass';
 
@@ -33,9 +33,6 @@ class Main extends React.Component<MainProps, MainState> {
   public render() {
     return(
       <>
-<Head>
-  <title>My Resume</title>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <NextSeo
     title={TITLE}
     description={DESCRIPTION}
@@ -46,7 +43,7 @@ class Main extends React.Component<MainProps, MainState> {
       description: DESCRIPTION,
       images: [
         {
-          url: URL + '/my-photo.jpg',
+          url: '/my-photo.jpg',
           width: 800,
           height: 600,
           alt: 'My photo',
@@ -59,6 +56,18 @@ class Main extends React.Component<MainProps, MainState> {
       cardType: 'summary_large_image',
     }}
   />
+  <SocialProfileJsonLd
+    type="Person"
+    name="Donatien NAMBININTSOA"
+    url={URL}
+    sameAs={[
+      'https://github.com/donatien513',
+      'https://www.linkedin.com/in/donatien-nambinintsoa/'
+    ]}
+  />
+<Head>
+  <title>My Resume</title>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" />
