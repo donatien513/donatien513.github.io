@@ -27,9 +27,12 @@ class SingleStack extends React.Component<SingleStackProps, SingleStackState> {
       <>
         <Card className="border-0">
           <CardBody>
-            <div className="dib w-100 tc animated fadeIn">
-              <div className="animated zoomIn">
+            <div className="dib w-100 tc">
+              <div>
                 { this.props.stack.icon }
+              </div>
+              <div className="mv3 gray">
+                { this.props.stack.name }
               </div>
             </div>
           </CardBody>
@@ -65,7 +68,7 @@ class TechStack extends React.Component<TechStackProps, TechStackState> {
 
   public render() {
     const settings = {
-      dots: true,
+      dots: false,
       autoplay: true,
       infinite: true,
       speed: 500,
