@@ -1,13 +1,28 @@
 import React from 'react';
 import { Container, Card, CardBody, Row, Col, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import nanoid from 'nanoid';
+import { useMediaQuery } from 'react-responsive'
 import { assign, get } from 'lodash';
 import { AwesomeButton } from "react-awesome-button";
 import Slider from "react-slick";
 import TechStackList from '../datas/tech-stack-list';
 import lang from '../lang';
+
+import '../styles/tech-stack.sass';
 import '../styles/icons.sass';
 
+const MobileMini = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 456 })
+  return isMobile ? children : null
+}
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ minWidth: 457, maxWidth: 767  })
+  return isMobile ? children : null
+}
+const LargerThanMobile = ({ children }) => {
+  const isNotMobile = useMediaQuery({ minWidth: 768 })
+  return isNotMobile ? children : null
+}
 
 interface SingleStackProps extends React.Props<any> {
   stack: any
@@ -53,6 +68,31 @@ interface TechStackState {
   modalOpen: boolean
 }
 
+const TechStackCarousel = (slidesToShow: number) => {
+  const sliderProps = {
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1
+  };
+
+  return <Slider
+    className="dib w-100 mw7 center" {...sliderProps}
+    slidesToShow={slidesToShow}
+  >
+    {
+      techStacks
+      .filter(stack => stack.icon)
+      .map(stack => 
+        <div className="mv3" key={stack._key}>
+          <SingleStack stack={stack} />
+        </div>
+      )
+    }
+  </Slider>
+}
+
 class TechStack extends React.Component<TechStackProps, TechStackState> {
   constructor(props) {
     super(props);
@@ -67,15 +107,6 @@ class TechStack extends React.Component<TechStackProps, TechStackState> {
   }
 
   public render() {
-    const settings = {
-      dots: false,
-      autoplay: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1
-    };
-
     return(
       <>
         <Container className="mv5">
@@ -90,18 +121,14 @@ class TechStack extends React.Component<TechStackProps, TechStackState> {
             <Col lg="2" xl="3"></Col>
           </Row>
           <div className="tc roboto">{lang.toolsIUse} :</div>
-          <div>
-            <Slider className="dib w-100 mw7 center" {...settings}>
-              {
-                techStacks
-                .filter(stack => stack.icon)
-                .map(stack => 
-                  <div className="mv3" key={stack._key}>
-                    <SingleStack stack={stack} />
-                  </div>
-                )
-              }
-            </Slider>
+          <div className="relative">
+            <div className="dib top-0 left-0 absolute w-10 h-100 z-1 bg-fade-right"></div>
+            <div className="z--1">
+              <MobileMini>{TechStackCarousel(1) }</MobileMini>
+              <Mobile>{TechStackCarousel(2) }</Mobile>
+              <LargerThanMobile>{TechStackCarousel(3)}</LargerThanMobile>
+            </div>
+            <div className="dib top-0 right-0 absolute w-10 h-100 z-1 bg-fade-left"></div>
           </div>
         </Container>
       </>
