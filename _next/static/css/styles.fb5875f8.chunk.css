@@ -33,6 +33,12 @@
   height: calc(100vh - 100px);
   border-radius: 120px; }
 
+.bg-fade-right {
+  background: linear-gradient(to white, transparent); }
+
+.bg-fade-left {
+  background: linear-gradient(to transparent, white); }
+
 .social-icons {
   width: 34px;
   height: 34px;
@@ -41,4 +47,10 @@
 
 .social-icons:hover {
   opacity: 0.8; }
+
+.bg-fade-right {
+  background-image: linear-gradient(to right, white, transparent); }
+
+.bg-fade-left {
+  background-image: linear-gradient(to left, white, transparent); }
 
