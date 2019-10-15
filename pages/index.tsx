@@ -9,6 +9,7 @@ import Banner from '../components/banner';
 import Social from '../components/social';
 import TechStack from '../components/tech-stack';
 import Messaging from '../components/messaging';
+import EmailMe from '../components/email-me';
 import LanguageSwitch from '../components/language-switch';
 
 interface MainProps {};
@@ -85,11 +86,12 @@ class Main extends React.Component<MainProps, MainState> {
 
 
 </Head>
-        <div className="font-weight-normal w-100 h-100">
+        <div className="font-weight-normal w-100 h-100 f6">
           <LanguageSwitch refreshPage={this.refresh} />
           <Banner />
           <Social />
           <TechStack />
+          <EmailMe />
         </div>
       </>
     )
