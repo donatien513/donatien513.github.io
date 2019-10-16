@@ -1,9 +1,12 @@
 import React from 'react';
 import Typed from 'react-typed';
 import axios from 'axios';
-import { AwesomeButton } from "react-awesome-button";
-import ReCAPTCHA from "react-google-recaptcha";
-import { Row, Container, Col, Input, Form, Spinner, Alert } from 'reactstrap';
+import { AwesomeButton } from 'react-awesome-button';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Reward from 'react-rewards';
+import { Row, Container, Col, Input, Form, Spinner, UncontrolledAlert } from 'reactstrap';
+
+axios.defaults.headers.post['Access-Control-Allow-Origin'] ='*';
 
 interface EmailMeProps { };
 
@@ -17,6 +20,8 @@ interface EmailMeState {
 
 class EmailMe extends React.Component<EmailMeProps, EmailMeState> {
   recaptchaResponse: string = "";
+  reward: Reward;
+  recaptchaRef: React.RefObject<ReCAPTCHA> = React.createRef();
 
   constructor(props) {
     super(props);
@@ -34,8 +39,20 @@ class EmailMe extends React.Component<EmailMeProps, EmailMeState> {
 
   async send($event) {
     $event.preventDefault();
+    $event.persist();
+    this.setState({
+      sending: false,
+      sent: true,
+      error: false,
+      email: "",
+      message: ""
+    });
     try {
-      this.setState({ sending: true });
+      this.setState({
+        sending: true,
+        sent: false,
+        error: false,
+      });
       await axios({
         method: 'POST',
         headers: {
@@ -47,10 +64,20 @@ class EmailMe extends React.Component<EmailMeProps, EmailMeState> {
         },
         url: 'https://contact-me-flow.donatien513.now.sh/send',
       });
-      this.setState({ sending: false, sent: true });
+      this.setState({
+        sending: false,
+        sent: true,
+        error: false,
+        email: "",
+        message: ""
+      });
+      this.reward.rewardMe();
+      this.recaptchaRef.current.reset();
+      $event.target.reset()
     } catch (err) {
       this.setState({
         sending: false,
+        sent: false,
         error: true
       });
     }
@@ -73,26 +100,34 @@ class EmailMe extends React.Component<EmailMeProps, EmailMeState> {
                 ou directement avec le formulaire ci-dessous:
               </div>
               <Form onSubmit={this.send}>
-                <Input onChange={(e) => this.setState({ email: e.target.value })} type="text" className="w-100 shadow mv2" placeholder="Votre adresse email" />
-                <Input onChange={(e) => this.setState({ message: e.target.value })} type="textarea" className="w-100 shadow mv2" placeholder="Votre message" />
+                <Input onChange={e => this.setState({ email: e.target.value })} type="text" className="w-100 shadow mv2" placeholder="Votre adresse email" />
+                <Input onChange={e => this.setState({ message: e.target.value })} type="textarea" className="w-100 shadow mv2" placeholder="Votre message" />
                 <div className="tc">
                   <div className="centered dib mv4">
                     <ReCAPTCHA
+                      ref={this.recaptchaRef}
                       size="normal"
                       className="center"
                       sitekey="6Lcfub0UAAAAALkCAkuZnKhUzBYiVpExjUDH-sDJ"
                       onChange={this.recaptchaChange}
                     />
                   </div>
-                  <AwesomeButton type="secondary">
-                    { this.state.sending ? <Spinner size="sm" color="secondary" /> : "Envoyer" }
-                  </AwesomeButton>
+                  <Reward ref={ref => { this.reward = ref }} type="confetti" >
+                    <AwesomeButton type="secondary">
+                      { this.state.sending ? <Spinner size="sm" color="secondary" /> : "Envoyer" }
+                    </AwesomeButton>
+                  </Reward>
                 </div>
                 <div className="mv4">
                   {this.state.error &&
-                    <Alert color="danger">
+                    <UncontrolledAlert color="danger">
                       Votre message n'a pas pu être envoyé
-                    </Alert>
+                    </UncontrolledAlert>
+                  }
+                  {this.state.sent &&
+                    <UncontrolledAlert color="success">
+                      Votre message m'a bien été envoyé.
+                    </UncontrolledAlert>
                   }
                 </div>
               </Form>
