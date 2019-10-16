@@ -70,7 +70,7 @@ class Banner extends React.Component<BannerProps, BannerState> {
             <div className="absolute bg-navy w-100 h-50 z--1"></div>
             <Container>
               <div>
-<SyntaxHighlighter className="mv5 mw7 w-100 center shadow f5 f6-sm bg-white" language="javascript">{
+<SyntaxHighlighter className="mv5 mw7 w-100 center shadow f6 f6-sm bg-white" language="javascript">{
 `const network = require("awesome-recruitment-network");
 const { skills, expectedSalary } = require("./me");
 

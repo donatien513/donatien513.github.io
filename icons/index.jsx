@@ -20,9 +20,6 @@ import git from 'react-svg-loader!../assets/icons/git.svg';
 // Platforms
 import aws from 'react-svg-loader!../assets/icons/aws.svg';
 
-// Mobiles
-import flutter from 'react-svg-loader!../assets/icons/flutter.svg';
-
 // Databases
 import mongodb from 'react-svg-loader!../assets/icons/mongodb.svg';
 import mysql from 'react-svg-loader!../assets/icons/mysql.svg';
@@ -47,7 +44,6 @@ export default {
   node,
   aws,
   git,
-  flutter,
   mongodb,
   react,
   golang,

@@ -9,7 +9,6 @@ export default [
   { name: 'HTML', icon: <Icons.html /> },
   { name: 'CSS', icon: <Icons.css /> },
   { name: 'Node', icon: <Icons.node /> },
-  { name: 'Flutter', icon: <Icons.flutter /> },
   { name: 'React', icon: <Icons.react /> },
   { name: 'Angular', icon: <Icons.angular /> },
   { name: 'Vue', icon: <Icons.vue /> },
