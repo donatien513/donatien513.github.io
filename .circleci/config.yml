@@ -3,7 +3,7 @@ jobs:
   Build:
     docker:
     - image: circleci/node:10.16.0
-    working_directory: ~/my-resume
+    working_directory: ~/donatien513.github.io
     steps:
     - checkout
     - restore_cache:
@@ -24,7 +24,7 @@ jobs:
         command: |
           npm run export
   Test:
-    working_directory: ~/my-resume
+    working_directory: ~/donatien513.github.io
     docker:
     - image: circleci/node:10.16.0
     steps:
@@ -42,7 +42,7 @@ jobs:
         name: Run ESLint
         command: npm test
   deploy:
-    working_directory: ~/my-resume
+    working_directory: ~/donatien513.github.io
     docker:
     - image: circleci/node:10.16.0
     steps:
